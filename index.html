@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>First Website</title>
+        <style>
+            body {
+                background: rgb(5, 0, 0);
+                color: rgb(45, 45, 45);
+                padding: 10px;
+                font-family: arial;
+            }
+            header {
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+            [id=all-contents] {
+                max-width: 800px;
+                margin: auto;
+            }
+    
+            /* navigation menu */
+            nav {
+                background: rgb(169,169,169);
+                margin: 0 auto;
+                margin-bottom: 20px;
+                display: flex;
+                padding: 10px;
+            }
+            nav header {
+                display: flex;
+                align-items: center;
+                color: rgb(255, 255, 255);
+                flex: 1;
+            }
+            nav ul {
+                list-style-image: none;
+            }
+            nav li {
+                display: inline-block;
+                padding: 0 10px;
+            }
+            nav a {
+                text-decoration: none;
+                color: #fff;
+            }
+    
+            /* main container area beneath menu */
+            main {
+                background: rgb(245, 238, 219);
+                display: flex;
+            }
+            [class=sidebar] {
+                margin-right: 25px;
+                padding: 10px;
+            }
+            [class=sidebar] img {
+                width: 200px;
+            }
+            [class=content] {
+                flex: 1;
+                padding: 15px;
+            }
+            [class=interests] header {
+                font-size: 1.25em;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id="all-contents"> 
+            <nav>
+                <header>Patrick Brown Jr.</header>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                </ul>
+            </nav>
+            
+            <main>
+                <div class="sidebar">
+                    <img src="data:image/png;base64,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">
+                </div>
+    
+                <div class="content">
+                    <body>
+                        <body>
+                            <header>PJ Brown</header>
+                            <p>Computer Tech at Apple</p>
+                            <section class="interests">
+                                <header>Interests</header>
+                                    <ul>
+                                        <li>Traveling</li>
+                                        <li>Fashion</li>
+                                        <li>Sports</li>
+                                    </ul>
+                            </section>
+                        </body>
+                    </body>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
