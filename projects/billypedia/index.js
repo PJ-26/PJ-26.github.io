@@ -18,9 +18,6 @@ $(document).ready(function() {
             
             return $('<li>')
                 .attr('index', i)
-                .attr('recording-type', 'top-rated')
-                .data('recording', recording)
-                .addClass('recording')
                 .text(recording.title)
                 .click(function(){
                    $('#topRated-image').attr('src',recording.art);
@@ -39,7 +36,7 @@ $(document).ready(function() {
             .append($('<ul>').attr('id','list-general-recording'))
             .appendTo('#sidebar');
     
-    $('<div>')
+        $('<div>')
             .attr('id','image-container-generalRecordings').addClass('image-container')
             .append($('<img>').attr('id','generalRecordings-image').attr('src','images/album/eastern-rebellion.jpg')).addClass('image')
             .prependTo('#section-general-recordings');
@@ -76,27 +73,24 @@ $(document).ready(function() {
             }
         });
         
-        
-        
-        
+        let rider = data.rider;
+
         var createTable = function(rider){
         var createRow = function(rider){
         var $row = $("<tr>");
-        var $type = $("<td>").text(data.rider.type);
-        var $desc = $("<td>").text(data.rider.desc);
+        var $type = $("<td>").text(rider.type);
+        var $desc = $("<td>").text(rider.desc);
         $row.append($type);
         $row.append($desc);
         return $row;
-    }
+    };
     var $table = $("<table>");
-    var $rows = data.map(createRow);
+    var $rows = rider.map(createRow);
     $table.append($rows);
     return $table;
 };
-let people = [{nameFirst: "John", nameLast: "Doe"}, {nameFirst: "Dick", nameLast: "Jones"}]
-createTable(people).appendTo("body");
         
-        
+ $('<div>').append($('<h3>').text('Rider Data')).append(createTable(rider)).appendTo('.content');       
     
        // YOUR CODE ABOVE HERe //
     })
